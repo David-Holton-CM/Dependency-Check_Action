@@ -8,7 +8,13 @@ LABEL repository="https://github.com/dependency-check/Dependency-Check_Action" \
       com.github.actions.icon="shield" \
       com.github.actions.color="red"
 
-USER root 
+USER root
+
+RUN groupadd  -g 910 -o dockerroot
+RUN useradd -m -u 910 -g 910 -o -s /bin/bash dockerroot
+RUN groupadd  -g 911 -o jenkins
+RUN useradd -m -u 911 -g 911 -o -s /bin/bash jenkins
+RUN usermod -a -G 910 jenkins
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
