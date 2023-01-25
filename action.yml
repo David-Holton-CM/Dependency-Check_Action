@@ -13,7 +13,7 @@ inputs:
         required: true
     out:
         required: true
-        default: '${{github.workspace}}/reports'
+        default: 'reports'
 
     args:
         required: false
@@ -29,6 +29,6 @@ runs:
         - '--format' 
         - '${{ inputs.format }}'
         - '--out'
-        - '${{ inputs.out }}'
+        - '/tmp/${{ inputs.out }}'
         - '--noupdate'
         - ${{ inputs.args }}
