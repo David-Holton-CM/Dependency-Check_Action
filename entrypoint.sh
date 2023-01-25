@@ -4,6 +4,9 @@ set -e
 df -h 
 
 echo "Hey FOOBAR, $(hostname) $(date)" >> /tmp/reports/Foo.out
+ls -l /tmp/reports/Foo.out
+cat /tmp/reports/Foo.out
+echo
 
 sleep 30
 
