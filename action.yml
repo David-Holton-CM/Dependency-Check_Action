@@ -29,6 +29,6 @@ runs:
         - '--format' 
         - '${{ inputs.format }}'
         - '--out'
-        - '${{ github_workspace }}/${{ inputs.out }}'
+        - '${{ github.workspace }}/${{ inputs.out }}'
         - '--noupdate'
         - ${{ inputs.args }}
