@@ -29,6 +29,6 @@ runs:
         - '--format' 
         - '${{ inputs.format }}'
         - '--out'
-        - '${{ inputs.out }}'
+        - './${{ inputs.out }}'
         - '--noupdate'
         - ${{ inputs.args }}
