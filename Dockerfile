@@ -10,9 +10,6 @@ LABEL repository="https://github.com/dependency-check/Dependency-Check_Action" \
 
 USER root 
 
-RUN mkdir /tmp/reports
-VOLUME /tmp/reports
-
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/bin/sh","/entrypoint.sh"]
