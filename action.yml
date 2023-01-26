@@ -2,18 +2,18 @@ name: 'Dependency Check'
 description: 'Github action to execute dependency check as part of a github workflow'
 Author: 'javixeneize'
 branding:
-  icon: 'shield'  
+  icon: 'shield'
   color: 'red'
 inputs:
     project:
         required: true
     path:
-        required: true  
+        required: true
     format:
         required: true
     out:
         required: true
-        default: '${{ github.workspace }}/reports'
+        default: 'reports'
 
     args:
         required: false
@@ -26,9 +26,9 @@ runs:
         - '${{ inputs.project }}'
         - '--scan'
         - '${{ inputs.path }}'
-        - '--format' 
+        - '--format'
         - '${{ inputs.format }}'
         - '--out'
-        - '${{ inputs.out }}'
+        -  '/github/workspace/${{ inputs.out }}'
         - '--noupdate'
         - ${{ inputs.args }}
