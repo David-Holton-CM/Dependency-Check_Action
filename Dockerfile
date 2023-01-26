@@ -8,7 +8,8 @@ LABEL repository="https://github.com/dependency-check/Dependency-Check_Action" \
       com.github.actions.icon="shield" \
       com.github.actions.color="red"
 
-USER root
+#USER root
+USER 1000:1000
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
